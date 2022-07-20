@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "..\\survey.html"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "C0622G1",
+		"liveServer.settings.port": 5502
+	}
+}
