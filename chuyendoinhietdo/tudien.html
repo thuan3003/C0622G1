@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>từ điển</title>
+</head>
+<body>
+    <script>
+        const vn =["trái táo", "trái chuối", "trái cam"];
+        const en = ["apple", "banana", "organge"];
+        function translateVNEN(vnWord){
+            let position = -1;
+            position = vn.findIndex(function(word){
+                returnword.toLocaleLowerCase()== vnWord.toLocaleLowerCase();
+            })
+            if (position != -1){
+                return en[position];
+            }
+                return "not found";
+        }
+        function translateENVN(enWord){
+            let position = -1;
+            position = en.findIndex(function(word){
+                 return word.toLocaleLowerCase()== enWord.toLocaleLowerCase();   
+                })
+            if (position != -1){
+                return vn[position];
+                }
+                return "not found";
+        }
+        function find(){
+            let language = document.querySelector("#language").value;
+            let keyword = document.querySelector("#keyword").value;
+            let result ="";
+            switch(language){
+                case "VietNam": {
+                    result= translateENVN(keyword);
+                    break;
+                }
+                case "English" : {
+                    result = translateVNEN(keyword);
+                    break;
+
+                }
+            }
+            document.querySelector("#result").value= result;
+        }
+    </script>
+</body>
+</html>
