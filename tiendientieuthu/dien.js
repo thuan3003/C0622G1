@@ -1,6 +1,6 @@
 function add(){
     let a = document.getElementById("electric").value;
-    let electric=document.getElementById("electric");
+    let electric=document.getElementById("ketqua");
 //     switch (true){
 //         case electric <=50 :{
 //             sum_1= (a* 1.678).toFixed(3);
@@ -35,10 +35,16 @@ function add(){
 }
 // }
 // }
-// function cancle(){
-//     document.getElementById("electric").value = null;
-//     document.getElementById("ketqua").innerHTML = null;
-//  }
-electric.value=`${a<= 50 ? 'mức 1': a<=100? 'mức 2': a<=200? 'mức 3'
-: a<=300? 'mức 4':a<=400? 'mức 5':'mưc 6'
+// 
+electric.innerHTML =`${a<= 50 ? (a* 1.678).toFixed(3)
+    : a<=100? ((a -50) * 1.734 + (50 * 1.678)).toFixed(3)
+    : a<=200? ((50 * 1.678) + (50 * 1.734) + (a-100)*2.014).toFixed(3)
+    : a<=300? ((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (a-200)*2.536).toFixed(3)
+    : a<=400? ((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (200*2.536) + (a-300)*2.834).toFixed(3)
+    :((50 * 1.678) + (50 * 1.734) + (100 * 2.014) + (200*2.536) + (300*2.834) + (a-400)*2.927).toFixed(3)
 }`;
+
+function cancle(){
+    document.getElementById("electric").value = null;
+    document.getElementById("ketqua").innerHTML = null;
+ }
